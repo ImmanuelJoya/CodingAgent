@@ -12,7 +12,7 @@
 - py -v 3.10+
 - uv project and package manager
   ```bash
-  py install uv
+  pip install uv
   ```
 
 ```bash
