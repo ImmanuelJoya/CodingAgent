@@ -1,4 +1,4 @@
-## Project Details 
+## Project Scope 
 - Scan the file with-in the working directory 
 - Read a file's content 
 - Overwrites a file's content 
@@ -10,7 +10,7 @@
 ## Prerequisites
 
 - py -v 3.10+
-- uv project and package manager
+- uv project and package manager (An extremely fast Python package and project manager, written in Rust.)
   ```bash
   pip install uv
   ```

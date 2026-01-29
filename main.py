@@ -2,17 +2,32 @@ import os
 from dotenv import load_dotenv
 from google import genai
 from google.genai import types
+import sys
 
+def main():
 
-load_dotenv()
-api_key = os.environ.get("GEMINI_API_KEY")
-client = genai.Client(api_key =api_key)
+    load_dotenv()
+    api_key = os.environ.get("GEMINI_API_KEY")
+    client = genai.Client(api_key =api_key)
 
 # print (f"API Key: {api_key}")
+    # print ("Args", sys.argv)
 
-response = client.models.generate_content(
-    model = "gemini-2.5-flash",
-    contents = "name a few sifi-movies of all times, based on users reviews",
-)
+    if len(sys.argv) <2:
+        print ("Please provide a prompt as a command line argument.")
+        sys.exit(1)
 
-print(response.text)
+    prompt = sys.argv[1]
+    
+    response = client.models.generate_content(
+        model = "gemini-2.5-flash",
+        contents = prompt,
+    )
+    print(response.text)
+    if response is None or response.usage_metadata is None:
+        print("No response or usage metadata available.")
+        return
+    print (f"Response tokens: {response.usage_metadata.candidates_token_count}")
+    print (f"Prompt tokens: {response.usage_metadata.prompt_token_count}")
+
+main()
