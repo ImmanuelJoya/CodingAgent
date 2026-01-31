@@ -9,8 +9,11 @@ def get_file_content(working_dircetory, file_path):
         return f"Error: {file_path} is not a valid file."
     
     file_content_string = ""
-    with open(abs_file_path, 'r') as f:
-        file_content_string = f.read(MAX_CHARS)
-        if len(file_content_string) >= MAX_CHARS:
-            file_content_string += (f'[...File "{file_path}" truncated after {MAX_CHARS} characters...]')
-    return file_content_string
+    try:
+        with open(abs_file_path, 'r') as f:
+            file_content_string = f.read(MAX_CHARS)
+            if len(file_content_string) >= MAX_CHARS:
+                file_content_string += (f'[...File "{file_path}" truncated after {MAX_CHARS} characters...]')
+        return file_content_string
+    except Exception as e:
+        return f"Error reading file {file_path}: {str(e)}"
