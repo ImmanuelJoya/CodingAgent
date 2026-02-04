@@ -33,7 +33,7 @@ def main():
         model = "gemini-2.5-flash",
         contents = messages,
     )
-    print(response.text)
+    print(response.text) 
     if response is None or response.usage_metadata is None:
         print("No response or usage metadata available.")
         return
