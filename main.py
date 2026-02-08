@@ -15,7 +15,7 @@ def main():
 # print ("Args", sys.argv)
 
     if len(sys.argv) <2:
-        print ("Please provide a prompt as a command line argument.")
+        print ("Please, be a good lad and provide a prompt as a command line argument.")
         sys.exit(1)
     
     verbose_flag = False
