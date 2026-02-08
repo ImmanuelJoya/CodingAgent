@@ -12,7 +12,7 @@ def main():
     client = genai.Client(api_key =api_key)
 
 # print (f"API Key: {api_key}")
-    # print ("Args", sys.argv)
+# print ("Args", sys.argv)
 
     if len(sys.argv) <2:
         print ("Please provide a prompt as a command line argument.")
