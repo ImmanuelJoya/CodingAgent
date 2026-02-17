@@ -4,5 +4,9 @@ from functions.get_file_content import get_file_content
 def main():
     working_dir = "calculator"
     print(get_file_content(working_dir, "lorem.txt"))
+    print(get_file_content(working_dir, "main.py"))
+    print(get_files_info(working_dir, "calculator.py"))
+    print(get_files_info(working_dir, "pkg/calculator.py"))
+    print(get_files_info(working_dir, "main.py"))
     
 main()
