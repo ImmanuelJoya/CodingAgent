@@ -11,7 +11,7 @@ def main():
     api_key = os.environ.get("GEMINI_API_KEY")
     client = genai.Client(api_key =api_key)
 
-# print (f"API Key: {api_key}")
+# print (f"API Key: {api_key}") 
 # print ("Args", sys.argv)
 
     if len(sys.argv) <2:
