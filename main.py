@@ -13,7 +13,7 @@ def main():
 
 # print (f"API Key: {api_key}") 
 # print ("Args", sys.argv)
-
+ 
     if len(sys.argv) <2:
         print ("Please, be a good lad and provide a prompt as a command line argument.")
         sys.exit(1)
